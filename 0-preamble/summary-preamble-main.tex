@@ -1,0 +1,58 @@
+%--------------------------------------------------------------
+%               Preamble for thesis summary 
+%--------------------------------------------------------------
+
+%--------------------DOCUMENT-CLASS----------------------------
+
+\documentclass[twoside = false, 12pt, a4paper]{scrbook}
+% The scrbook class provides provides features useful when preparing a book for publication. This class provides the "book"-like element of the "koma-script", a collection of replacements for the "article", "report" and "book" classes with emphasis on typography and versatility.
+
+% DEACTIVATAD
+% Option "twoside": with this option the inner margin of one page is only half as wide as the corresponding outer margin; also the left and right margins are swapped on verso pages, so this option is ideal for double-sided printing. If the option is passed without a value, the value "true" is assumed, so two-sided printing is enabled. Deactivating the option with "twoside = false" leads to one-sided printing: the left and right margins are the same width.
+
+%--------------------------------------------------------------
+
+%--------------------SUBDIRECTORIES-SETTING--------------------
+
+% The following code declares a list of subdirectories so you can insert TeX files ("\input", "\include"), images ("\includegraphics"), or code ("\lstinputlisting") without specifying the path to the inserted file (if contained in one of these subdirectories).
+
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{0-preamble/}{1-front/}{2-main/}{other/}}
+\makeatother
+
+% Our list of subdirectories is hold by "\input@path": an internal command; these kind of commands use "@" in their name, are mainly intended for package or class writers and normal users are prevented from accidentally redefining them. To be able to define or redifine such commands, you need to use  the commands "\makeatletter" and "\makeatother"; the first one ensures that the "@" character is seen as a letter when searching for command names; the last one disable the possibility to act on internal commands to avoid subsequent problems with command interpretation.
+
+% The "\input@path" macro is normally undefined in LaTeX, but can be defined by some used package: for example, "graphics" and "graphicx" internally store the path specified in "\graphicspath" in "\Ginput@path" and locally sets "\input@path" to "\Ginput@path". We can therefore use "\providecommand" to define "\input@path" in the the case that it is undefined and then "\g@addto@macro" to extends its definition.
+
+%--------------------------------------------------------------
+
+%--------------------PACKAGES----------------------------------
+
+\input{summary-packages-basic}
+
+\input{summary-packages-math}
+
+\input{summary-packages-basic-last}
+
+%--------------------------------------------------------------
+
+%--------------------SETTINGS----------------------------------
+
+\input{summary-settings-general}
+
+%--------------------------------------------------------------
+
+%--------------------KEYWORDS----------------------------------
+
+\input{summary-keywords-title}
+
+%--------------------------------------------------------------
+
+%--------------------SOURCES-FOR-COMMENTS----------------------
+
+% The comments on LaTeX and its commands are based on the contents of https://latexref.xyz/, an unofficial reference manual for the LaTeX2e document preparation system.
+
+% The comments on the classes, styles or packages (and their commands and options) come from the description provided on CTAN (https://www.ctan.org/) and from the official documentation of the different classes, styles or packages.
+
+%--------------------------------------------------------------
