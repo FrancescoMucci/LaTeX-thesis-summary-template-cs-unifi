@@ -18,7 +18,7 @@
 
 \makeatletter
 \providecommand*{\input@path}{}
-\g@addto@macro\input@path{{0-preamble/}{1-front/}{2-main/}{other/}}
+\g@addto@macro\input@path{{0-preamble/}{0-preamble/basic/}{0-preamble/math/}{0-preamble/keywords/}{1-front/}{2-main/}{other/}}
 \makeatother
 
 % Our list of subdirectories is hold by "\input@path": an internal command; these kind of commands use "@" in their name, are mainly intended for package or class writers and normal users are prevented from accidentally redefining them. To be able to define or redifine such commands, you need to use  the commands "\makeatletter" and "\makeatother"; the first one ensures that the "@" character is seen as a letter when searching for command names; the last one disable the possibility to act on internal commands to avoid subsequent problems with command interpretation.
@@ -29,11 +29,11 @@
 
 %--------------------PACKAGES----------------------------------
 
-\input{summary-packages-basic}
+\input{basic/summary-packages-basic}
 
-\input{summary-packages-math}
+\input{math/summary-packages-math}
 
-\input{summary-packages-basic-last}
+\input{basic/summary-packages-basic-last}
 
 %--------------------------------------------------------------
 
@@ -45,7 +45,9 @@
 
 %--------------------KEYWORDS----------------------------------
 
-\input{summary-keywords-title}
+\input{keywords/summary-keywords-helper}
+
+\input{keywords/summary-keywords-title}
 
 %--------------------------------------------------------------
 

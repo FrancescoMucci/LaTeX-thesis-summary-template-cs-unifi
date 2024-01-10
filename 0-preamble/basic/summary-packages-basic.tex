@@ -13,6 +13,9 @@
 \usepackage[utf8]{inputenc}
 % The package "inputenc" translates various standard and other input encodings into a LaTeX internal language. It is used by LaTeX to correctly interpret the characters entered in the editor. "utf8" is the input encoding which allows you to write the signs of numerous alphabets in the editor directly from the keyboard, avoiding having to load the encoding suitable for the language of the document each time.
 
+\usepackage{hyphenat}
+% The "hyphenat" package can disable all hyphenation or enable hyphenation of non-alphabetics or monospaced fonts; this package also enable hyphenation within words that contain non-alphabetic characters and hyphenation of text typeset in monospaced fonts. In particular TeX does not hyphenate already hyphenated word, such as "electromagnetic-endioscopy"; in this case, the "\hyp" command can be used to allow automatic hyphenation of compound words: e.g. "electromagnetic{\hyp}endioscopy".
+
 \usepackage{lipsum}
 % The "lipsum" package gives you easy access to 150 paragraphs of the Lorem Ipsum dummy text.
 
